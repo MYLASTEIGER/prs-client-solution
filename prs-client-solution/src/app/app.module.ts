@@ -29,7 +29,7 @@ import { UserEditComponent } from './prs/user/user-edit/user-edit.component';
     UserEditComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, FormsModule, HttpClientModule,
     AppRoutingModule
   ],
   providers: [],

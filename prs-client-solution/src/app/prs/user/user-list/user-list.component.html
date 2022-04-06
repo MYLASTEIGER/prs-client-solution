@@ -23,14 +23,14 @@
             <td>{{ u.id }}</td>
             <td>{{ u.username }}</td>
             <td>{{ u.password }}</td>
-            <td>{{ u.firstName }}</td>
-            <td>{{ u.lastName }}</td>
+            <td>{{ u.firstname }}</td>
+            <td>{{ u.lastname }}</td>
             <td>{{ u.phone }}</td>
             <td>{{ u.email }}</td>
             <td>{{ u.isReviewer }}</td>
             <td>{{ u.isAdmin }}</td>
             <td>
-                <a routerLink="/user/detail/{{u.id}}">Detail</a>
+                <a routerLink="/user/detail/{{u.id}}">Detail</a>  | 
                 <a routerLink="/user/edit/{{u.id}}">Edit</a>
             </td>
         </tr>
