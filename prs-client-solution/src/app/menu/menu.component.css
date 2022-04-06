@@ -1,0 +1,20 @@
+nav {
+    background-color: darkslategray;
+}
+ul {
+    padding-left: 0;
+    padding-right: 0;
+}
+li {
+    display: inline-block;
+}
+a {
+    color: aliceblue;
+    padding: 0 20px;
+    text-decoration: none;
+}
+a:hover {
+    color: aliceblue;
+    font-size: larger;
+    font-style: italic;
+}
