@@ -1,0 +1,23 @@
+<app-menu></app-menu>
+<div>
+    <span id="pageTitle">Vendor List</span>
+    <a routerLink="/vendor/create">New</a>
+</div>
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip</th>
+            <th>Phone</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let v of vendors"></tr>
+    </tbody>
+</table>
