@@ -18,6 +18,20 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let v of vendors"></tr>
+        <tr *ngFor="let v of vendors">
+            <td>{{ v.id }}</td>
+            <td>{{ v.code }}</td>
+            <td>{{ v.name }}</td>
+            <td>{{ v.address }}</td>
+            <td>{{ v.city }}</td>
+            <td>{{ v.state }}</td>
+            <td>{{ v.zip }}</td>
+            <td>{{ v.phone }}</td>
+            <td>{{ v.email }}</td>
+            <td>
+                <a routerLink="/vendor/detail/{{v.id}}">Detail</a> |
+                <a routerLink="/vendor/edit/{{v.id}}">Edit</a>
+            </td>
+        </tr>
     </tbody>
 </table>

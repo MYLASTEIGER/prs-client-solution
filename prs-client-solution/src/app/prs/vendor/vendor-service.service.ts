@@ -24,7 +24,7 @@ baseUrl: string = "http://localhost:15952/api/vendors"
     return this.http.post(`${this.baseUrl}`, vendor) as Observable<Vendor>
   }
   change(vendor: Vendor): Observable<any> {
-    return this.http.put(`${this.baseUrl}/${vendor.id}`, Vendor) as Observable<any>
+    return this.http.put(`${this.baseUrl}/${vendor.id}`, vendor) as Observable<any>
   }
   remove(id: number): Observable<any> {
     return this.http.delete(`${this.baseUrl}/${id}`) as Observable<any>
