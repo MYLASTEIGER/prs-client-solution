@@ -1,0 +1,48 @@
+<app-menu></app-menu>
+<div>
+    <span id="pageTitle">Request Detail</span>
+</div>
+<table *ngIf="request" class="table table-sm">
+<tbody>
+
+    <tr>
+        <th>Id</th>
+        <td><input [(ngModel)]="request.id" type="number" readonly></td>
+    </tr>
+    <tr>
+        <th>Description</th>
+        <td><input [(ngModel)]="request.description" type="text" readonly></td>
+    </tr>
+    <tr>
+        <th>Justification</th>
+        <td><input [(ngModel)]="request.justification" type="text" readonly></td>
+    </tr>
+    <tr>
+        <th>RejectionReason</th>
+        <td><input [(ngModel)]="request.rejectionReason" type="text" readonly></td>
+    </tr>
+    <tr>
+        <th>DeliveryMode</th>
+        <td><input [(ngModel)]="request.deliveryMode" type="text" readonly></td>
+    </tr>
+    <tr>
+        <th>Status</th>
+        <td><input [(ngModel)]="request.status" type="text" readonly></td>
+    </tr>
+    <tr>
+        <th>Total</th>
+        <td><input [(ngModel)]="request.total" type="number" readonly></td>
+    </tr>
+    <tr>
+        <th>User</th>
+        <td *ngIf="request.user"><input [ngModel]="request.user.username" type="text"></td>
+    </tr>
+</tbody>
+</table>
+<div>
+    <button (click)="remove()" class="btn btn-danger">Delete</button>
+    <span *ngIf="showVerifyButton">
+        <button (click)="verifyRemove()" class="btn btn-warning">Verify Delete</button>
+    </span>
+</div>
+

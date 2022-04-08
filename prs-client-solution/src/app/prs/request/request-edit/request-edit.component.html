@@ -1,0 +1,49 @@
+<app-menu></app-menu>
+<div>
+    <span id="pageTitle">Edit Request</span>
+</div>
+<table *ngIf="request" class="table table-sm">
+    <tbody>
+
+        <tr>
+            <th>Id</th>
+            <td><input [(ngModel)]="request.id" type="number" readonly></td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td><input [(ngModel)]="request.description" type="text"></td>
+        </tr>
+        <tr>
+            <th>Justification</th>
+            <td><input [(ngModel)]="request.justification" type="text" ></td>
+        </tr>
+        <tr>
+            <th>RejectionReason</th>
+            <td><input [(ngModel)]="request.rejectionReason" type="text" ></td>
+        </tr>
+        <tr>
+            <th>DeliveryMode</th>
+            <td><input [(ngModel)]="request.deliveryMode" type="text"></td>
+        </tr>
+        <tr>
+            <th>Status</th>
+            <td><input [(ngModel)]="request.status" type="text"></td>
+        </tr>
+        <tr>
+            <th>Total</th>
+            <td><input [(ngModel)]="request.total" type="number"></td>
+        </tr>
+        <tr>
+            <th>User</th>
+            <td><select [(ngModel)]="request.userId" > 
+                <option *ngFor="let u of users" value="{{u.id}}">{{u.username}}</option>
+            </select></td>
+        </tr>
+    
+
+    </tbody>
+</table>
+<div>
+    <button (click)="save()" class="btn btn-primary">Save</button>
+</div>
+

@@ -5,14 +5,14 @@
     
 </div>
 <table class="table table-sm">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>PartNbr</th>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>PartNbr</th>
             <th>Name</th>
             <th>Price</th>
             <th>Unit</th>
-            <th>PhotoPath</th>
+            <th>Vendor</th>
         </tr>
     </thead>
     <tbody>
@@ -22,7 +22,7 @@
             <td>{{ p.name }}</td>
             <td>{{ p.price | currency }}</td>
             <td>{{ p.unit }}</td>
-            <td>{{ p.photoPath }}</td>
+            <td *ngIf="p.vendor">{{ p.vendor.name }}</td>
             <td>
                 <a routerLink="/product/detail/{{p.id}}">Detail</a>  | 
                 <a routerLink="/product/edit/{{p.id}}">Edit</a>

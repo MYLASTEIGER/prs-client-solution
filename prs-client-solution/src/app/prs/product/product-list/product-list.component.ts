@@ -19,7 +19,7 @@ export class ProductListComponent implements OnInit {
     this.prdsvc.list().subscribe({
       next: (res) => {
         this.products = res;
-        console.debug("products", res)
+        console.debug("Products", res)
       },
       error: (err) => {
         console.error(err)

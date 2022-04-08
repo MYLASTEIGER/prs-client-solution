@@ -3,10 +3,12 @@
     <span id="pageTitle">New User</span>
 </div>
 <table *ngIf="user" class="table table-sm">
-    <tr>
-        <th>Id</th>
-        <td><input [(ngModel)]="user.id" type="number"  readonly></td>
-    </tr>
+    <tbody>
+
+        <tr>
+            <th>Id</th>
+            <td><input [(ngModel)]="user.id" type="number"  readonly></td>
+        </tr>
     <tr>
         <th>Username</th>
         <td><input [(ngModel)]="user.username" type="text"></td>
@@ -27,18 +29,19 @@
         <th>Phone</th>
         <td><input [(ngModel)]="user.phone" type="text"></td>
     </tr>
-     <tr>
+    <tr>
         <th>Email</th>
         <td><input [(ngModel)]="user.email" type="text"></td>
     </tr>
-     <tr>
+    <tr>
         <th>IsReviewer</th>
         <td><input [(ngModel)]="user.isReviewer" type="checkbox"></td>
     </tr>
-     <tr>
+    <tr>
         <th>IsAdmin</th>
         <td><input [(ngModel)]="user.isAdmin" type="checkbox"></td>
     </tr>
+</tbody>
 </table>
 <div>
     <button (click)="save()" class="btn btn-success">Save</button>

@@ -23,6 +23,10 @@ import { ProductListComponent } from './prs/product/product-list/product-list.co
 import { ProductDetailComponent } from './prs/product/product-detail/product-detail.component';
 import { ProductCreateComponent } from './prs/product/product-create/product-create.component';
 import { ProductEditComponent } from './prs/product/product-edit/product-edit.component';
+import { RequestListComponent } from './prs/request/request-list/request-list.component';
+import { RequestDetailComponent } from './prs/request/request-detail/request-detail.component';
+import { RequestCreateComponent } from './prs/request/request-create/request-create.component';
+import { RequestEditComponent } from './prs/request/request-edit/request-edit.component';
 
 
 @NgModule({
@@ -45,6 +49,10 @@ import { ProductEditComponent } from './prs/product/product-edit/product-edit.co
     ProductDetailComponent,
     ProductCreateComponent,
     ProductEditComponent,
+    RequestListComponent,
+    RequestDetailComponent,
+    RequestCreateComponent,
+    RequestEditComponent,
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule,

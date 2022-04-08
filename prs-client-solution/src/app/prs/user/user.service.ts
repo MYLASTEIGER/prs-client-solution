@@ -12,6 +12,8 @@ export class UserService {
   constructor(
     private http: HttpClient
   ) { }
+  login(login: string, password: string): Observable<User> {
+    return this.http.get(`${this.baseUrl}/${login}/${password}`) as Observable<User> };
 
   list(): Observable<User[]> {
     return this.http.get(`${this.baseUrl}`) as Observable<User[]>;

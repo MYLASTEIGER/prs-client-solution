@@ -7,15 +7,15 @@ import { User } from '../prs/user/user.class';
 })
 export class SystemService {
 
-  _user!: User | null;
+  user: any = null;
 
   constructor(
     private router: Router
   ) { }
-  /*chkLogin(): void {
-    if(!this.isLoggedIn) {
+  chkLogin(): void {
+    if(this.user == null) {
       this.router.navigateByUrl("/login");
 
     }
-  }*/
+  }
 }

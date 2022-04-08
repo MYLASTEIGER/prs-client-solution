@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { VendorServiceService } from '../../vendor/vendor-service.service';
+import { Vendor } from '../../vendor/vendor.class';
 import { Product } from '../product.class';
 import { ProductService } from '../product.service';
 
@@ -11,13 +13,16 @@ import { ProductService } from '../product.service';
 export class ProductDetailComponent implements OnInit {
 
   
-  product! : Product
+  product! : Product;
+  vendors!: Vendor[];
   showVerifyButton: boolean = false;
+
 
   constructor(
     private prodsvc: ProductService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router, 
+    private vendsvc: VendorServiceService
   ) { }
 
     remove(): void {
@@ -29,6 +34,7 @@ export class ProductDetailComponent implements OnInit {
         next: (res) => {
           console.debug("Product Deleted");
           this.router.navigateByUrl("/product/list");
+          this.product = res;
         },
       })
     }
