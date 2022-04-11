@@ -22,11 +22,15 @@ export class RequestService {
   reviews(userId: number): Observable<Request[]> {
     return this.http.get(`${this.baseUrl}/reviews/${userId}`) as Observable<Request[]>;
   }
-  review(id: number, request: Request): Observable<Request> {
-    return this.http.put(`{${this.baseUrl}/review/${userId}`) as Observable<Request>;
+  review(request: Request): Observable<any> {
+    return this.http.put(`{${this.baseUrl}/review/${request.id}`, request) as Observable<any>;
   }
-
-
+  approve(request: Request): Observable<any> {
+    return this.http.put(`${this.baseUrl}/approve/${request.id}`, request) as Observable<any>;
+  }
+  reject(request: Request): Observable<any> {
+    return this.http.put(`${this.baseUrl}/reject/${request.id}`, request) as Observable<any>;
+  }
   get(id: number): Observable<Request> {
     return this.http.get(`${this.baseUrl}/${id}`) as Observable<Request>
   }

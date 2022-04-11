@@ -1,0 +1,59 @@
+<app-menu></app-menu>
+<div>
+    <span id="pageTitle">Request Lines</span> |
+    
+</div>
+<table class="table table-sm">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Total</th>
+            <th>User</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ request.id }}</td>
+            <td>{{ request.description }}</td>
+            <td>{{ request.status }}</td>
+            <td>{{ request.total | currency }}</td>
+            <td *ngIf="request.user">{{ request.user.username }}</td>
+            <td >
+                <button (click)="review()" class="btn btn=link" >Review</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a routerLink="/requestline/create">New Line Item</a> |
+    <table class="table table-sm">
+     <thead>
+         <tr>
+             <th>Id</th>
+             <th>Product</th>
+             <th>Quantity</th>
+             <th>Price</th>
+             <th>Line Total</th>
+             <th>Actions</th>
+            </tr>
+     </thead>
+        <tbody *ngIf="request.requestLines">
+            <tr *ngFor = "let rl of request.requestLines">
+                <td>{{ rl.id }}</td>
+                <td>{{ rl.product.name}} </td>
+                <td>{{ rl.quantity }}</td>
+                <td>{{ rl.product.price }}</td>
+                <td>{{ rl.product.price * rl.quantity}}</td>
+                <td>                
+
+                 <button (click)="edit(rl)" class="btn btn=link" >Edit</button> |
+                 <button (click)="remove(rl)" class="btn btn=link" >Delete</button> 
+
+                </td>
+            </tr>
+
+        </tbody>  
+    </table>

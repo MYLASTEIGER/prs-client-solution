@@ -27,6 +27,9 @@ import { RequestListComponent } from './prs/request/request-list/request-list.co
 import { RequestDetailComponent } from './prs/request/request-detail/request-detail.component';
 import { RequestCreateComponent } from './prs/request/request-create/request-create.component';
 import { RequestEditComponent } from './prs/request/request-edit/request-edit.component';
+import { RequestLinesComponent } from './prs/request/request-lines/request-lines.component';
+import { RequestlineCreateComponent } from './prs/requestline/requestline-create/requestline-create.component';
+import { RequestlineEditComponent } from './prs/requestline/requestline-edit/requestline-edit.component';
 
 
 @NgModule({
@@ -53,6 +56,9 @@ import { RequestEditComponent } from './prs/request/request-edit/request-edit.co
     RequestDetailComponent,
     RequestCreateComponent,
     RequestEditComponent,
+    RequestLinesComponent,
+    RequestlineCreateComponent,
+    RequestlineEditComponent,
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule,
