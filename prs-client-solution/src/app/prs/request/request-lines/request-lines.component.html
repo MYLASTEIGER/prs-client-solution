@@ -48,10 +48,10 @@
                 <td>{{ rl.product.price }}</td>
                 <td>{{ rl.product.price * rl.quantity}}</td>
                 <td>                
-
-                 <button (click)="edit(rl)" class="btn btn=link" >Edit</button> |
-                 <button (click)="remove(rl)" class="btn btn=link" >Delete</button> 
-
+                        
+                        
+                        <a routerLink="/requestlines/edit/{{rl.id}}">Edit</a> | 
+        
                 </td>
             </tr>
 
