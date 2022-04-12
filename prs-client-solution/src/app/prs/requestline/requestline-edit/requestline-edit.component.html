@@ -10,17 +10,19 @@
         </tr>
         <tr>
             <th>Product</th>  
-            <td><select [(ngModel)]="requestline.productId" id=""></select>
-            <option *ngFor="let p of product" value="{{p.id}}">{{p.name}}</option>
+            <td>
+                <select [(ngModel)]="requestline.productId">
+                <option *ngFor="let p of product" value="{{p.id}}">{{p.name}}</option>
+            </select>
             </td>
         </tr>
         <tr>
             <th>Quantity</th>  
-            <td><input type="number"></td>
+            <td><input [(ngModel)]="requestline.quantity" type="number"></td>
         </tr>
     </tbody>
 </table>
 <div>
-    <button (click)="save()" class="btn btn-primary">Save</button>
+    <button (click)="save()" class="btn btn-success">Save</button>
 </div>
 

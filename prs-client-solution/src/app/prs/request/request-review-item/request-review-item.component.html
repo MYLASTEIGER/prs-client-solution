@@ -1,17 +1,18 @@
 <app-menu></app-menu>
 <div>
-    <span id="pageTitle">Request Lines</span> |
+    <span id="pageTitle">Request Review</span> |
     
 </div>
-<table class="table table-sm" *ngIf="request">
+<table class="table table-sm">
     <thead>
         <tr>
             <th>Id</th>
             <th>Description</th>
+            <th *ngIf="request.rejectionReason">Rejection Reason</th>
             <th>Status</th>
             <th>Total</th>
             <th>User</th>
-            <th>Action</th>
+            
         </tr>
     </thead>
     <tbody>
@@ -19,17 +20,14 @@
             <td>{{ request.id }}</td>
             <td>{{ request.description }}</td>
             <td>{{ request.status }}</td>
+            <td *ngIf="request.rejectionReason">{{request.rejectionReason}}</td>
             <td>{{ request.total | currency }}</td>
             <td *ngIf="request.user">{{ request.user.username }}</td>
-            <td >
-                <button (click)="review()" class="btn btn=link clickable" >Review</button>
-            </td>
         </tr>
         </tbody>
     </table>
-
-  <span>RequestLines</span>  |  <a routerLink="/requestlines/create/{{request.id}}" *ngIf="request">New Line Item</a> |
-    <table class="table table-sm" *ngIf="request">
+<hr>
+    <table class="table table-sm">
      <thead>
          <tr>
              <th>Id</th>
@@ -37,20 +35,26 @@
              <th>Quantity</th>
              <th>Price</th>
              <th>Line Total</th>
-             <th>Actions</th>
             </tr>
      </thead>
-        <tbody *ngIf="request.requestLines">
+        <tbody>
             <tr *ngFor = "let rl of request.requestLines">
                 <td>{{ rl.id }}</td>
                 <td>{{ rl.product.name}} </td>
                 <td>{{ rl.quantity }}</td>
                 <td>{{ rl.product.price | currency }}</td>
                 <td>{{ rl.product.price * rl.quantity | currency }}</td>
-                <td>                              
-                        <a routerLink="/requestlines/edit/{{rl.id}}">Edit</a> | 
-                        <button (click)="remove(rl)" class="btn btn-link clickable">Delete</button>
-                </td>
-            </tr>
-        </tbody>  
-    </table>
+                </tr>
+            </tbody>  
+        </table>
+        <p>
+            <button (click)="approve()" class="btn btn-link text-success clickable">Approve</button>
+            <button (click)="reject()" class="btn btn-link text-danger  clickable">Reject</button>
+            
+            <span *ngIf="showVerifyButton">
+                <input [(ngModel)]="request.rejectionReason" type="text">
+                <button (click)="verifyReject()" class="btn btn-link text-danger  clickable">Verify Reject</button>
+            </span>
+        </p>
+    
+    

@@ -23,7 +23,7 @@ export class RequestService {
     return this.http.get(`${this.baseUrl}/reviews/${userId}`) as Observable<Request[]>;
   }
   review(request: Request): Observable<any> {
-    return this.http.put(`{${this.baseUrl}/review/${request.id}`, request) as Observable<any>;
+    return this.http.put(`${this.baseUrl}/review/${request.id}`, request) as Observable<any>;
   }
   approve(request: Request): Observable<any> {
     return this.http.put(`${this.baseUrl}/approve/${request.id}`, request) as Observable<any>;

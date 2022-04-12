@@ -31,7 +31,7 @@ export class RequestlineEditComponent implements OnInit {
     this.rqlnsvc.change(this.requestline).subscribe({
       next: (res) => {
         console.debug("Requestline Changed");
-        this.router.navigateByUrl("/request/lines/${this.requestline.requestId")
+        this.router.navigateByUrl(`/request/lines/${this.requestline.requestId}`);
         this.requestline =res;
       },
       error: (err) => {

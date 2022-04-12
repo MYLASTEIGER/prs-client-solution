@@ -27,7 +27,9 @@ export class RequestLinesComponent implements OnInit {
   review(): void {
     this.rqsvc.review(this.request).subscribe({
       next: (res) => {
-        console.log(res);
+        console.debug("Request Reviewed");
+        this.refresh();
+        
       },
       error: (err) => {
         console.error(err);
@@ -47,6 +49,13 @@ export class RequestLinesComponent implements OnInit {
     });
   }
   remove(rl:Requestline): void {
+    this.rqlsvc.remove(rl.id).subscribe({
+      next: (res) => {
+        console.debug("requestline deleted");
+        this.refresh();
+      }
+
+    });
     
   }
 
